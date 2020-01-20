@@ -1,0 +1,6 @@
+{
+  "title": "apiDoc example API",
+  "description": "apiDoc example API generated with \"apidog -i apidog/ --ordered\" CLI",
+  "sampleUrl": "http://localhost:8080",
+  "sampleUrl:ws": "ws://localhost:8082"
+}
