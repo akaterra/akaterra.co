@@ -50,7 +50,7 @@
  * @apiSubgroup subgroup
  * @apiVersion v1
  * @apiParam {String} id Id
- * @apiParam (queryParameter) {String} [param1=test] Query param 1
+ * @apiParam {String} [param1=test] Query param 1
  */
 
 /**
@@ -62,9 +62,9 @@
  * @apiSubgroup subgroup
  * @apiVersion v2
  * @apiParam {String} id Id
- * @apiParam (queryParameter2) {String} [param2=test] Query param 2
- * @apiParam (queryParameter2) {String} [param3=test] Query param 3
- * @apiParam (queryParameter2) {String} [param4=test] Query param 4
+ * @apiParam {String} [param2=test] Query param 2
+ * @apiParam {String} [param3=test] Query param 3
+ * @apiParam {String} [param4=test] Query param 4
  */
 
 /**
@@ -72,7 +72,7 @@
  * @apiChapter chapter
  * @apiSubgroup subgroup1
  * @apiParam {String} id Id
- * @apiParam (queryParameter) {String} [param1=test] Query param 1
+ * @apiParam {String} [param1=test] Query param 1
  */
 
 /**
@@ -80,14 +80,14 @@
  * @apiChapter chapter
  * @apiGroup group1
  * @apiParam {String} id Id
- * @apiParam (queryParameter) {String} [param1=test] Query param 1
+ * @apiParam {String} [param1=test] Query param 1
  */
 
 /**
  * @api {get} /test/with/no/group/subgroup/:id?:param1 GET with no group and subgroup
  * @apiChapter chapter
  * @apiParam {String} id Id
- * @apiParam (queryParameter) {String} [param1=test] Query param 1
+ * @apiParam {String} [param1=test] Query param 1
  */
 
 /**
@@ -95,19 +95,33 @@
  * @apiChapter chapter
  * @apiName GET_WITH_NAME
  * @apiParam {String} id Id
- * @apiParam (queryParameter) {String} [param1=test] Query param 1
+ * @apiParam {String} [param1=test] Query param 1
  */
 
 /**
- * @api {post} /test/:id POST with multiple content types
+ * @api {post} /test POST with header and parameter groups
  * @apiChapter chapter
+ * @apiGroup group1
+ * @apiSubgroup subgroup1
+ * @apiFamily test1
+ * @apiHeader (Header 1) {String} header1 Header 1
+ * @apiHeader (Header 2) {String} header2 Header 2
+ * @apiHeader (Header 3) {String} header3 Header 3
+ * @apiParam (Parameter) {String} param1 Body param 1
+ * @apiParam (File) {File} file File
+ * @apiParam (Raw body) {RawBody} rawBody
+ */
+
+/**
+ * @api {post} /test POST with multiple content types
+ * @apiChapter chapter
+ * @apiFamily test2
+ * @apiGroup group1
+ * @apiSubgroup subgroup1
  * @apiContentType form
  * @apiContentType json
  * @apiContentType xml
- * @apiGroup group1
- * @apiSubgroup subgroup1
- * @apiParam {String} id Id
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiParam {String} [param1=test] Body param 1
  *
  * @apiParamExample {form} Body example:
  * param1=param1
@@ -129,21 +143,19 @@
  * @api {natspub} publish Publish
  * @apiChapter Nats
  * @apiContentType json
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiParam {String} [param1=test] Body param 1
  */
 
 /**
  * @api {natsrpc} rpc RPC
  * @apiChapter Nats
  * @apiContentType json
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiParam {String} [param1=test] Body param 1
  */
 
 /**
  * @api {natssub} subscribe Subscribe
  * @apiChapter Nats
- * @apiContentType json
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
  */
 
 // RabbitMQ chapter
@@ -151,20 +163,20 @@
 /**
  * @api {rabbitmqpub} publish Publish
  * @apiChapter RabbitMQ
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiContentType json
+ * @apiParam {String} [param1=test] Body param 1
  */
 
 /**
  * @api {rabbitmqrpc} rpc RPC
  * @apiChapter RabbitMQ
  * @apiContentType json
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiParam {String} [param1=test] Body param 1
  */
 
 /**
  * @api {rabbitmqsub} subscribe Subscribe
  * @apiChapter RabbitMQ
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
  */
 
  // Redis chapter
@@ -172,14 +184,13 @@
 /**
  * @api {redispub} publish Publish
  * @apiChapter Redis
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiContentType json
+ * @apiParam {String} [param1=test] Body param 1
  */
 
 /**
  * @api {redissub} subscribe Subscribe
  * @apiChapter Redis
- * @apiContentType json
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
  */
 
 // WebSocket chapter
@@ -188,5 +199,5 @@
  * @api {websocket} communicate Communicate
  * @apiChapter WebSocket
  * @apiContentType json
- * @apiParam (bodyParameter) {String} [param1=test] Body param 1
+ * @apiParam {String} [param1=test] Body param 1
  */
