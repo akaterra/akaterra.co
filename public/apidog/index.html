@@ -1,5 +1,526 @@
 <html>
-  <body>
-    <a href="/apidog/apidoc/">Example</a>
+  <head>
+    <link href="../../../mini/mini.min.css" rel="stylesheet" />
+    <script src="../../../mini/mini.js"></script>
+  </head>
+  <body class="mini back-light" id="mini">
+    <div class="med ltr">
+      <div class="inv shadow shadow-low">
+        <nav class="container">
+          <div class="row">
+            <div class="c18 group hor flex children-upper children-no-underline">
+              <a class="button button-wall button-square transparent inline flex-1" href="#liveExample" title="Live example">Live example</a>
+              <a class="button button-wall button-square transparent inline flex-1" href="#gettingStarted" title="Getting started">Getting started</a>
+              <a class="button button-wall button-square transparent inline flex-1" href="#annotations" title="Annotations">Annotations</a>
+              <a class="button button-wall button-square primary transparent inline flex-1" href="https://github.com/akaterra/apidog" title="GitHub">GitHub</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- main content -->
+
+      <div class="container fine">
+        <div class="paragraph row">
+          <div class="c18 flex middle">
+            <img src="apidog.png" height="140px" width="112px">
+            <div>
+              <div class="caption largest primary">apiDog</div>
+              <div class="bold">As alternative to the <a class="link" href="https://apidocjs.com" title="apiDoc">apiDoc</a> generates documentation from API annotations in your source code.</div>
+            </div>
+          </div>
+        </div>
+        <div class="paragraph row">
+          <div class="c18">
+            <div class="tabs">
+              <div class="tabs-bar">
+                <div class="tab active" data-mini-tabs-id="javadoc">JavaDoc style - Java, JS, PHP, TS...</div>
+                <div class="tab" data-mini-tabs-id="coffeescript">CoffeeScript</div>
+                <div class="tab" data-mini-tabs-id="elixir">Elixir</div>
+                <div class="tab" data-mini-tabs-id="lua">Lua</div>
+                <div class="tab" data-mini-tabs-id="python">Python</div>
+                <div class="tab" data-mini-tabs-id="ruby">Ruby</div>
+              </div>
+              <div class="tabs-content underlined">
+                <div class="code" data-mini-tabs-id="javadoc">
+/**
+ * @api {get} /entity/:id Request some entity by its ID
+ * @apiName GetEntity
+ * @apiGroup User
+ * @apiSubgroup REST
+ *
+ * @apiParam {String} id Entity ID.
+ *
+ * @apiSuccess {String} id Entity ID.
+ * @apiSuccess {String} description Entity description.
+ * @apiSuccess {Date} lastUsed Last used time.
+ */
+                </div>
+                <div class="code hidden" data-mini-tabs-id="coffeescript">
+###
+@api {get} /entity/:id Request some entity by its ID
+@apiName GetEntity
+@apiGroup User
+@apiSubgroup REST
+
+@apiParam {String} id Entity ID.
+
+@apiSuccess {String} id Entity ID.
+@apiSuccess {String} description Entity description.
+@apiSuccess {Date} lastUsed Last used time.
+###
+                </div>
+                <div class="code hidden" data-mini-tabs-id="elixir">
+# {
+# @api {get} /entity/:id Request some entity by its ID
+# @apiName GetEntity
+# @apiGroup User
+# @apiSubgroup REST
+#
+# @apiParam {String} id Entity ID.
+#
+# @apiSuccess {String} id Entity ID.
+# @apiSuccess {String} description Entity description.
+# @apiSuccess {Date} lastUsed Last used time.
+# }
+                </div>
+                <div class="code hidden" data-mini-tabs-id="lua">
+--[[
+@api {get} /entity/:id Request some entity by its ID
+@apiName GetEntity
+@apiGroup User
+@apiSubgroup REST
+
+@apiParam {String} id Entity ID.
+
+@apiSuccess {String} id Entity ID.
+@apiSuccess {String} description Entity description.
+@apiSuccess {Date} lastUsed Last used time.
+]]
+                </div>
+                <div class="code hidden" data-mini-tabs-id="python">
+"""
+@api {get} /entity/:id Request some entity by its ID
+@apiName GetEntity
+@apiGroup User
+@apiSubgroup REST
+
+@apiParam {String} id Entity ID.
+
+@apiSuccess {String} id Entity ID.
+@apiSuccess {String} description Entity description.
+@apiSuccess {Date} lastUsed Last used time.
+"""
+                </div>
+                <div class="code hidden" data-mini-tabs-id="ruby">
+=begin
+@api {get} /entity/:id Request some entity by its ID
+@apiName GetEntity
+@apiGroup User
+@apiSubgroup REST
+
+@apiParam {String} id Entity ID.
+
+@apiSuccess {String} id Entity ID.
+@apiSuccess {String} description Entity description.
+@apiSuccess {Date} lastUsed Last used time.
+=end
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="paragraph row">
+          <div class="c-4 -m-">
+            <div class="list primary active children-no-underline">
+              <a class="list-header" href="#liveExample">Live example</a>
+              <a class="list-header" href="#features">Features</a>
+              <a class="list-header" href="#gettingStarted">Getting started</a>
+              <a class="list-item" href="#gettingStartedInstallation">Installation</a>
+              <a class="list-item" href="#gettingStartedCLI">CLI</a>
+              <a class="list-item" href="#gettingStartedTemplate">Template</a>
+              <a class="list-item" href="#gettingStartedConfiguration">Configuration</a>
+              <a class="list-item" href="#gettingStartedServerProxy">Server proxy</a>
+              <a class="list-header" href="#annotations">Annotations</a>
+              <a class="list-item" href="#annotationsApiChapter">@apiChapter</a>
+              <a class="list-item" href="#annotationsApiContentType">@apiContentType</a>
+              <a class="list-item" href="#annotationsApiErrorValue">@apiErrorValue</a>
+              <a class="list-item" href="#annotationsApiFamily">@apiFamily</a>
+              <a class="list-item" href="#annotationsApiHeaderValue">@apiHeaderValue</a>
+              <a class="list-item" href="#annotationsApiNote">@apiNote</a>
+              <a class="list-item" href="#annotationsApiFParamPrefix">@apiParamPrefix</a>
+              <a class="list-item" href="#annotationsApiParamValue">@apiParamValue</a>
+              <a class="list-item" href="#annotationsApiSchema">@apiSchema</a>
+              <a class="list-item" href="#annotationsApiSampleRequestVariable">@apiSampleRequestVariable</a>
+              <a class="list-item" href="#annotationsApiSubgroup">@apiSubgroup</a>
+              <a class="list-item" href="#annotationsApiSuccessValue">@apiSuccessValue</a>
+            </div>
+          </div>
+          <div class="c14 -m- fine">
+            <div class="caption primary"><a name="liveExample">Live example</a></div>
+            <div class="paragraph">
+              See live example <a class="link" href="/apidog/apidoc/">here</a>.
+            </div>
+            <div class="caption primary"><a name="features">Features</a></div>
+            <div class="paragraph">
+              <div class="list">
+                <div class="list-subheader">Templates for:</div>
+                <div class="list-item">Minimalistic HTML file with dynamic assets loading</div>
+                <div class="list-item">Single pre-compiled HTML file with no external dependencies</div>
+                <div class="list-item">Markdown file</div>
+                <div class="list-item">Swagger specification file (v1.2, v2.0)</div>
+                <div class="list-subheader">Server proxy</div>
+                <div class="list-subheader">Send sample request plugin for html template:</div>
+                <div class="list">
+                  <div class="list-subsubheader">Transports support:</div>
+                  <div class="list-subitem">HTTP/HTTPS</div>
+                  <div class="list-subitem">Nats PUB/SUB (publish/subscribe, via Server proxy)</div>
+                  <div class="list-subitem">Nats RPC (remote procedure call, via Server proxy)</div>
+                  <div class="list-subitem">RabbitMQ PUB/SUB (publish/subscribe, via Server proxy)</div>
+                  <div class="list-subitem">RabbitMQ RPC (remote procedure call, via Server proxy)</div>
+                  <div class="list-subitem">Redis PUB/SUB (publish/subscribe, via Server proxy)</div>
+                  <div class="list-subitem">WebSocket/WebSocket Secure (W3C)</div>
+                  <div class="list-subsubheader">Content types support:</div>
+                  <div class="list-subitem">Form</div>
+                  <div class="list-subitem">JSON</div>
+                  <div class="list-subitem">XML</div>
+                </div>
+                <div class="list-subheader">Nested typed parameters</div>
+                <div class="list-subheader">Presets (saved requests)</div>
+                <div class="list-subheader">Variables</div>
+              </div>
+            </div>
+            <div class="caption primary"><a name="annotations">Annotations</a></div>
+            <div class="paragraph">
+              apiDog provides the following additional annotations to the <a class="link" href="https://apidocjs.com/#params">those existing</a> in apiDoc.
+            </div>
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiChapter">@apiChapter</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiChapter chapter_name
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Defines to which chapter the doc block belongs.
+              </p>
+              <p>
+                The chapter will be shown as a navigation switcher (@html template).
+                If <span class="bold mono">@apiDefine</span> declares definition with the same name also includes its title and description.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiChapter Some chapter
+ */
+                </div>
+              </p>
+              <p>
+                <div class="label">Example of usage with <span class="bold mono">@apiDefine</span>:</div>
+                <div class="blockquote code">
+/**
+ * @apiDefine chapter Some chapter
+ * @apiDescription Some description
+ */
+
+/**
+ * @apiChapter chapter
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiContentType">@apiContentType</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiContentType content_type
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Defines content type.
+              </p>
+              <p>
+                Used as a filter of the <span class="bold mono">@apiExample</span> content having corresponding <span class="bold mono">content_type</span>.
+                Defaines the format for sending data by the "Send sample request" plug-in.
+              </p>
+              <p>
+                Can be defined multiply.
+              </p>
+              <p>
+                <div class="label">Example of <span class="bold mono">application/x-www-form-urlencoded</span>:</div>
+                <div class="blockquote code">
+/**
+ * @apiContentType form
+ */
+                </div>
+              </p>
+              <p>
+                <div class="label">Example of <span class="bold mono">application/json</span>:</div>
+                <div class="blockquote code">
+/**
+ * @apiContentType json
+ */
+                </div>
+              </p>
+              <p>
+                <div class="label">Example of <span class="bold mono">application/xml</span>:</div>
+                <div class="blockquote code">
+/**
+ * @apiContentType xml
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiErrorValue">@apiErrorValue</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiErrorValue [{type}] value [description]
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Describes custom error value.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiErrorValue {String} value String value
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiFamily">@apiFamily</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiFamily identifier_name
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Defines unique identifier <span class="bold mono">identifier_name</span> of the doc block within its chapter, group and subgroup.
+              </p>
+              <p>
+                Used to distinguish between several doc blocks with the same descriptors to show them separately or combine the different doc blocks under versioning.
+              </p>
+              <p>
+                <div class="label">Example 1:</div>
+                <div class="blockquote code">
+/**
+ * @api {post} /test
+ * @apiVersion v1
+ * @apiFamily a
+ */
+
+/**
+ * @api {post} /test
+ * @apiVersion v1
+ * @apiFamily b
+ */
+                </div>
+              </p>
+              <p>
+                The second one does not override the first and is shown separately.
+              </p>
+              <p>
+                <div class="label">Example 2:</div>
+                <div class="blockquote code">
+/**
+ * @api {post} /v1/test
+ * @apiVersion v1
+ * @apiFamily a
+ */
+
+/**
+ * @api {post} /v2/test
+ * @apiVersion v2
+ * @apiFamily a
+ */
+                </div>
+              </p>
+              <p>
+                The second one is combined with the first and is shown under version.
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiHeaderValue">@apiHeaderValue</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiHeaderValue [{type}] value [description]
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Describes custom header value.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiHeaderValue {String} value String value
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiNote">@apiNote</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiNote title
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Adds note section that describes some additional information.
+                Used instead of <span class="bold mono">@api</span> annotation with all its allowed annotations.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiNote Note
+ * @apiVersion v1
+ * @apiDescription Some description
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiParamPrefix">@apiParamPrefix</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiParamPrefix prefix
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Prefixes all following <span class="bold mono">@apiParam</span>s with prefix.
+              </p>
+              <p>
+                Allows to reuse lists of <span class="bold mono">@apiParam</span>s between different doc blocks.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiDefine sharedParams
+ * @apiParam x
+ * @apiParam y
+ */
+
+/**
+ * @api {post} test1
+ * @apiParamPrefix body.
+ * @apiUse sharedParams
+ */
+
+/**
+ * @api {post} test2
+ * @apiParamPrefix payload.
+ * @apiUse sharedParams
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiParamValue">@apiParamValue</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiParamValue [{type}] value [description]
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Describes custom parameter value.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiParamValue {String} value String value
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiSchema">@apiSchema</a></div>
+              <div class="label">Usage:</div>
+              <div class="children-gap">
+                <div class="blockquote primary code code-dark">
+@apiSchema [(group)] {jsonschema=pathToFile[#internal.path]} @apiParam
+                </div>
+                <div class="blockquote primary code code-dark">
+@apiSchema [(group)] {swagger=pathToFile#internal.path.to.api} operationNickname
+                </div>
+                <div class="blockquote primary code code-dark">
+@apiSchema [(group)] {swagger=pathToFile#internal.path.to.model} @apiParam
+                </div>
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Uses external schema to fill doc block.
+              </p>
+              <p>
+                <span class="bold">jsonschema</span> allows to use $ref definitions within schema. <span class="bold">swagger</span> generates doc block by api operation or <span class="bold mono">@apiParam</span> list by model.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiSchema {jsonschema=./api.json#definitions.entity.get} @apiParam
+ */
+                </div>
+              </p>
+            </div>
+
+            <div class="paragraph">
+              <div class="caption smaller"><a name="annotationsApiSampleRequestVariable">@apiSampleRequestVariable</a></div>
+              <div class="label">Usage:</div>
+              <div class="blockquote primary code code-dark">
+@apiSampleRequestVariable [(namespace)] [{responsePath}] field[=defaultValue]
+              </div>
+            </div>
+            <div class="paragraph">
+              <p>
+                Defines the "Send sample request" plug-in variable which can be used globally through placeholders in the values of <span class="bold mono">@apiHeader</span> and <span class="bold mono">@apiParam</span>.
+              </p>
+              <p>
+                <span class="bold">jsonschema</span> allows to use $ref definitions within schema. <span class="bold">swagger</span> generates doc block by api operation or <span class="bold mono">@apiParam</span> list by model.
+              </p>
+              <p>
+                <div class="label">Example:</div>
+                <div class="blockquote code">
+/**
+ * @apiSchema {jsonschema=./api.json#definitions.entity.get} @apiParam
+ */
+                </div>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
   </body>
+  <script>
+    const mini = initMini();
+
+    mini.tabs.init();
+  </script>
 </html>
